@@ -1,0 +1,7 @@
+<section class="mb-10 flex flex-col items-center gap-5 rounded-2xl border border-neutral-200 bg-neutral-50/60 p-6 sm:flex-row sm:justify-between dark:border-neutral-800 dark:bg-neutral-900/40">
+  <a href="{{ "/about/" | relURL }}" class="flex items-center gap-4">
+    <img src="{{ "avatar.jpg" | relURL }}" alt="{{ site.Params.author }}" class="avatar">
+    <span class="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">{{ site.Title }}</span>
+  </a>
+  <div class="flex flex-wrap items-center justify-center gap-2">{{ partial "social.html" . }}</div>
+</section>
