@@ -1,13 +1,35 @@
-<div class="flex items-center gap-3">
-  <img src="{{ "avatar.jpg" | relURL }}" alt="{{ site.Params.author }}" class="avatar avatar-sm">
+<a href="{{ "/" | relURL }}" class="flex flex-col items-center gap-3 text-center">
+  <img src="{{ "avatar.jpg" | relURL }}" alt="{{ site.Params.author }}" class="avatar avatar-lg">
   <span class="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">{{ site.Title }}</span>
-</div>
-<nav class="mt-6 flex flex-col gap-1">
-  <a href="{{ "/posts/" | relURL }}" class="sidebar-link">blog</a>
-  <a href="{{ "/tags/" | relURL }}" class="sidebar-link">tags</a>
-  <a href="{{ "/about/" | relURL }}" class="sidebar-link">about</a>
-  <a href="{{ "/search/" | relURL }}" class="sidebar-link">search</a>
+</a>
+<nav class="mt-8 w-full">
+  <ul class="flex flex-col gap-1">
+    <li>
+      <a href="{{ "/posts/" | relURL }}" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+        <span>blog</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ "/tags/" | relURL }}" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><circle cx="7" cy="7" r="1.5"/></svg>
+        <span>tags</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ "/about/" | relURL }}" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        <span>about</span>
+      </a>
+    </li>
+    <li>
+      <a href="{{ "/search/" | relURL }}" class="sidebar-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span>search</span>
+      </a>
+    </li>
+  </ul>
 </nav>
-<div class="mt-6 flex flex-wrap gap-2 border-t border-neutral-200 pt-6 dark:border-neutral-800">
+<div class="mt-auto flex w-full items-center justify-center gap-2 pt-8">
   {{ partial "social.html" . }}
 </div>
