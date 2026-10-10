@@ -4,16 +4,22 @@
     {{ partial "head.html" . }}
   </head>
   <body class="flex min-h-screen flex-col bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-200">
-    <div class="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-8 px-4 py-10 lg:flex-row lg:gap-10">
-      <aside class="lg:w-56 lg:flex-none">
-        {{ partial "profile.html" . }}
-      </aside>
-      <main class="min-w-0 flex-1">
-        {{ block "main" . }}{{ end }}
-      </main>
-    </div>
+    <button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-label="Toggle navigation" aria-controls="sidebar" aria-expanded="false">
+      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div id="sidebar-backdrop" class="sidebar-backdrop" hidden></div>
+    <aside id="sidebar" class="sidebar" aria-hidden="true">
+      {{ partial "profile.html" . }}
+    </aside>
+    <main class="mx-auto w-full max-w-2xl flex-1 px-4 pb-10 pt-16">
+      {{ block "main" . }}{{ end }}
+    </main>
     {{ partial "footer.html" . }}
     {{ with resources.Get "js/code-copy.js" }}
+      {{ $js := . | minify | fingerprint }}
+      <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous" defer></script>
+    {{ end }}
+    {{ with resources.Get "js/sidebar.js" }}
       {{ $js := . | minify | fingerprint }}
       <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous" defer></script>
     {{ end }}

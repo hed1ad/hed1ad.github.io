@@ -1,15 +1,13 @@
-<div class="rounded-2xl border border-neutral-200 bg-neutral-50/60 p-5 dark:border-neutral-800 dark:bg-neutral-900/40 lg:sticky lg:top-10">
-  <a href="{{ "/" | relURL }}" class="flex items-center gap-3">
-    <img src="{{ "avatar.jpg" | relURL }}" alt="{{ site.Params.author }}" class="avatar avatar-sm">
-    <span class="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">{{ site.Title }}</span>
-  </a>
-  <nav class="mt-5 flex flex-wrap gap-2">
-    <a href="{{ "/posts/" | relURL }}" class="social-link">blog</a>
-    <a href="{{ "/tags/" | relURL }}" class="social-link">tags</a>
-    <a href="{{ "/about/" | relURL }}" class="social-link">about</a>
-    <a href="{{ "/search/" | relURL }}" class="social-link">search</a>
-  </nav>
-  <div class="mt-4 flex flex-wrap gap-2 border-t border-neutral-200 pt-4 dark:border-neutral-800">
-    {{ partial "social.html" . }}
-  </div>
+<div class="flex items-center gap-3">
+  <img src="{{ "avatar.jpg" | relURL }}" alt="{{ site.Params.author }}" class="avatar avatar-sm">
+  <span class="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">{{ site.Title }}</span>
+</div>
+<nav class="mt-6 flex flex-col gap-1">
+  <a href="{{ "/posts/" | relURL }}" class="sidebar-link">blog</a>
+  <a href="{{ "/tags/" | relURL }}" class="sidebar-link">tags</a>
+  <a href="{{ "/about/" | relURL }}" class="sidebar-link">about</a>
+  <a href="{{ "/search/" | relURL }}" class="sidebar-link">search</a>
+</nav>
+<div class="mt-6 flex flex-wrap gap-2 border-t border-neutral-200 pt-6 dark:border-neutral-800">
+  {{ partial "social.html" . }}
 </div>
