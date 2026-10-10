@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <h1 class="mb-8 text-xl font-semibold text-neutral-900 dark:text-neutral-100">{{ .Title }}</h1>
+  {{ with .Content }}
+    <div class="prose prose-neutral mb-8 max-w-none dark:prose-invert">{{ . }}</div>
+  {{ end }}
+  <ul class="space-y-8">
+    {{ range .Paginator.Pages }}
+      {{ partial "post-item.html" . }}
+    {{ end }}
+  </ul>
+  {{ partial "pagination.html" . }}
+{{ end }}

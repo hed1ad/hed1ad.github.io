@@ -1,0 +1,16 @@
+{{ $pag := .Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+  <nav class="mt-10 flex items-center justify-between text-sm">
+    {{ with $pag.Prev }}
+      <a href="{{ .URL }}" class="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100">← newer</a>
+    {{ else }}
+      <span></span>
+    {{ end }}
+    <span class="text-neutral-400 dark:text-neutral-600">{{ $pag.PageNumber }} / {{ $pag.TotalPages }}</span>
+    {{ with $pag.Next }}
+      <a href="{{ .URL }}" class="text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100">older →</a>
+    {{ else }}
+      <span></span>
+    {{ end }}
+  </nav>
+{{ end }}

@@ -1,0 +1,10 @@
+{{ define "main" }}
+  {{ with .Content }}
+    <div class="prose prose-neutral mb-10 max-w-none dark:prose-invert">{{ . }}</div>
+  {{ end }}
+  <ul class="space-y-8">
+    {{ range (where site.RegularPages "Section" "posts") }}
+      {{ partial "post-item.html" . }}
+    {{ end }}
+  </ul>
+{{ end }}

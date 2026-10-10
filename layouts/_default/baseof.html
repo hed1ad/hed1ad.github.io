@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="{{ site.LanguageCode | default "en" }}">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="flex min-h-screen flex-col bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-200">
+    {{ partial "header.html" . }}
+    <main class="mx-auto w-full max-w-2xl flex-1 px-4 py-10">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+    {{ with resources.Get "js/code-copy.js" }}
+      {{ $js := . | minify | fingerprint }}
+      <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous" defer></script>
+    {{ end }}
+  </body>
+</html>

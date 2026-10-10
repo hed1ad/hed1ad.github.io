@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <h1 class="mb-8 text-xl font-semibold text-neutral-900 dark:text-neutral-100">{{ .Title }}</h1>
+  {{ if hugo.IsDevelopment }}
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">Search is available in the production build — the Pagefind index is generated after <code>hugo</code>.</p>
+  {{ else }}
+    <div id="search"></div>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        new PagefindUI({ element: "#search", showSubResults: true, showImages: false });
+      });
+    </script>
+  {{ end }}
+{{ end }}

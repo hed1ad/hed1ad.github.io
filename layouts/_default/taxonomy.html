@@ -1,0 +1,8 @@
+{{ define "main" }}
+  <h1 class="mb-8 text-xl font-semibold text-neutral-900 dark:text-neutral-100">#{{ .Title | lower }}</h1>
+  <ul class="space-y-8">
+    {{ range .Pages }}
+      {{ partial "post-item.html" . }}
+    {{ end }}
+  </ul>
+{{ end }}

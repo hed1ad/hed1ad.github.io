@@ -1,0 +1,16 @@
+<footer class="mt-16 border-t border-neutral-200 dark:border-neutral-800">
+  <div class="mx-auto flex max-w-2xl flex-wrap items-center justify-between gap-3 px-4 py-6 text-sm text-neutral-500 dark:text-neutral-400">
+    <span>© {{ now.Year }} {{ site.Title }}</span>
+    <div class="flex items-center gap-4">
+      {{ with site.Params.social.github }}
+        <a href="https://github.com/{{ . }}" class="transition-colors hover:text-neutral-900 dark:hover:text-neutral-100">github</a>
+      {{ end }}
+      {{ with site.Params.social.telegram }}
+        <a href="https://t.me/{{ . }}" class="transition-colors hover:text-neutral-900 dark:hover:text-neutral-100">telegram</a>
+      {{ end }}
+      {{ with site.Home.OutputFormats.Get "rss" }}
+        <a href="{{ .RelPermalink }}" class="transition-colors hover:text-neutral-900 dark:hover:text-neutral-100">rss</a>
+      {{ end }}
+    </div>
+  </div>
+</footer>

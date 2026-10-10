@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import "./syntax.css";
+@plugin "@tailwindcss/typography";
+@source "hugo_stats.json";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+/* Code blocks: let Chroma own the background */
+.prose {
+  --tw-prose-pre-bg: transparent;
+}
+
+.prose code::before,
+.prose code::after {
+  content: none;
+}
+
+.highlight {
+  position: relative;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-neutral-200);
+}
+
+.highlight pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.highlight .code-copy {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  line-height: 1;
+  font-family: var(--font-mono);
+  border-radius: 0.375rem;
+  border: 1px solid var(--color-neutral-300);
+  background-color: var(--color-neutral-200);
+  color: var(--color-neutral-600);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.highlight:hover .code-copy,
+.highlight:focus-within .code-copy {
+  opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .highlight {
+    border-color: var(--color-neutral-800);
+  }
+
+  .highlight .code-copy {
+    border-color: var(--color-neutral-700);
+    background-color: var(--color-neutral-800);
+    color: var(--color-neutral-300);
+  }
+}
