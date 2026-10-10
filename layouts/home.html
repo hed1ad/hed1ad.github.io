@@ -1,5 +1,4 @@
 {{ define "main" }}
-  {{ partial "profile.html" . }}
   <ul class="space-y-8">
     {{ range (where site.RegularPages "Section" "posts") }}
       {{ partial "post-item.html" . }}

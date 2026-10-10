@@ -4,10 +4,14 @@
     {{ partial "head.html" . }}
   </head>
   <body class="flex min-h-screen flex-col bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-200">
-    {{ partial "header.html" . }}
-    <main class="mx-auto w-full max-w-2xl flex-1 px-4 py-10">
-      {{ block "main" . }}{{ end }}
-    </main>
+    <div class="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-8 px-4 py-10 lg:flex-row lg:gap-10">
+      <aside class="lg:w-56 lg:flex-none">
+        {{ partial "profile.html" . }}
+      </aside>
+      <main class="min-w-0 flex-1">
+        {{ block "main" . }}{{ end }}
+      </main>
+    </div>
     {{ partial "footer.html" . }}
     {{ with resources.Get "js/code-copy.js" }}
       {{ $js := . | minify | fingerprint }}

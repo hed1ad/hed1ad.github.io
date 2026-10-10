@@ -123,3 +123,8 @@
     border-color: var(--color-neutral-800);
   }
 }
+
+.avatar-sm {
+  width: 3.5rem;
+  height: 3.5rem;
+}
