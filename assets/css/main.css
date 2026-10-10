@@ -11,6 +11,13 @@
 /* Code blocks: let Chroma own the background */
 .prose {
   --tw-prose-pre-bg: transparent;
+  --tw-prose-pre-code: var(--color-neutral-800);
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose {
+    --tw-prose-pre-code: var(--color-neutral-200);
+  }
 }
 
 .prose code::before,
