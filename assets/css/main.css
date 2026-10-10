@@ -68,44 +68,6 @@
   }
 }
 
-/* Social buttons */
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.65rem;
-  font-size: 0.75rem;
-  line-height: 1;
-  border-radius: 9999px;
-  border: 1px solid var(--color-neutral-200);
-  color: var(--color-neutral-500);
-  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
-}
-
-.social-link svg {
-  flex: none;
-}
-
-.social-link:hover {
-  color: var(--color-neutral-900);
-  border-color: var(--color-neutral-400);
-  background-color: var(--color-neutral-100);
-  transform: translateY(-1px);
-}
-
-@media (prefers-color-scheme: dark) {
-  .social-link {
-    border-color: var(--color-neutral-800);
-    color: var(--color-neutral-400);
-  }
-
-  .social-link:hover {
-    color: var(--color-neutral-100);
-    border-color: var(--color-neutral-600);
-    background-color: var(--color-neutral-900);
-  }
-}
-
 /* Avatar */
 .avatar {
   display: block;
@@ -122,11 +84,6 @@
   .avatar {
     border-color: var(--color-neutral-800);
   }
-}
-
-.avatar-sm {
-  width: 3.5rem;
-  height: 3.5rem;
 }
 
 .avatar-lg {
