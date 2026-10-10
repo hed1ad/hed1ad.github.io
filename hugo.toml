@@ -2,6 +2,7 @@ baseURL = "https://hed1ad.github.io/"
 languageCode = "en-us"
 title = "hed1ad"
 enableRobotsTXT = true
+disableKinds = ["RSS"]
 
 [pagination]
   pagerSize = 20
@@ -26,15 +27,13 @@ enableRobotsTXT = true
     startLevel = 2
     endLevel = 3
 
-[outputs]
-  home = ["HTML", "RSS"]
-
 [params]
-  description = "Security research: vulnerability writeups in pwn, reverse engineering, and everything in between."
+  description = "Security enthusiast."
   author = "hed1ad"
   [params.social]
     github = "hed1ad"
     telegram = "hed1ad"
+    linkedin = "evgeniy-trofimov-953525226"
 
 [build]
   [build.buildStats]
